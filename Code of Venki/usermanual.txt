@@ -1,0 +1,209 @@
+_______________________________________________________________________________________________________________________
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+____________________________________________________USER MANUAL________________________________________________________
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+_______________________________________________________________________________________________________________________
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Project Title:         Inode based File System:
+
+Abstract:
+	Simulation of inode based file system on a flat file. 									   By Default the Blocksize that our system supports is 32 bytes. As it is a simulation we treated the data blocks to be only 2(actually it is 10 data blocks + indirection blocks in Unix inodes)  in number to show the clear view of block reallocation in case of deletion of a particlar file occupying some blocks.
+	The system supports directory hierarchies. 
+
+	The operations that are to be supported on the file system as per specification includes
+	1 – Make directory
+	2 – Remove directory
+	3   Create file
+	4   Delete file
+	5 – View file contents
+	6 – View all files in a folder (Should display file properties like inode no, owner, size etc)
+	7   copy file contents to a different file
+	8 – Traversing through the directory hierarchy.
+
+
+	But, our system supports the following commands
+
+_______________________________________________________________________________________________________________________
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+________________________________________Commands Valid in IBFS Shell are:______________________________________________
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+_______________________________________________________________________________________________________________________
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+	Use ~ as argument to Bypass a command(Only for Some Commands as specified)
+
+Directory Related Commands:
+	 md <directory name> -- To Create a Directory(mkdir)
+	 rd <directory name> -- To Remove an Empty Directory(rmdir)
+	 cd <directory name> 	,cd < / > 	,cd <..> 	,cd <.> 	,cd <fullpath> -- To Change Directory(cd)
+	 vd -- To View Contents of Directory(dir)
+File Related Commands:
+	 mf <file name> -- To Create a File(cat and copy con)
+	 vf <file name> -- To View the Contents of File(cat and type)
+	 rf <file name> -- To Remove a File(rm and del)
+	 cf <sourcefile> <destinationfile> -- To Copy Contents fo source to destination(cp and copy)
+	 mv <sourcefile> <destinationfile> -- To Rename a File(mv and ren)
+	 wc <file name> -- To Calculate the Lines ans Words in a File(wc)
+Disk Related Commands:
+	 du -- To Display Disk Usage(INNOVATION,du)
+	 df -- To Display Disk Free(INNOVATION,df)
+	 ft -- To Format the Disk(format)
+File System Structure Related Commands:
+	 rs -- To View the Root Structure or File Descriptor Block(INNOVATION,tree)
+	 is -- To View the Inode Structure(INNOVATION)
+Miscellanous Commands:
+	 cl -- To Clear the Screen Buffer(clear,cls)
+	 dt -- To Display Date(date,time)
+	 pd -- To Display the Current Working Directory(pwd)
+Commands to Know Author and Quit:
+	 at -- To Display About the Version Related Details(ver)
+	 qt -- To Quit or Logout(logout,exit,quit)
+Commands for Help:
+	 h  -- To Display Help on Commands(?,--h,man)
+	 s <command> -- To Display Help on Individaul Commands(--h,?)
+These Commands are Case Insensitive
+
+______________________________________________________________________________________________________________________
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+_______________________________________________Commands and Examples:_________________________________________________
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+______________________________________________________________________________________________________________________
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+
+Make Directory:
+	 md <directory name> -- To Create a Directory(mkdir)
+
+	EX:
+	 md venki--creates directory venki in the current directory,
+		Gives error message if a directory lready exists!
+	
+Remove Directory:
+	 rd <directory name> -- To Remove an Empty Directory(rmdir)
+
+	EX:
+	 rd venki -- removes directory named venki if it exists in current working directory
+	
+Change Directory:
+	 cd <directory name> 	,cd < / > 	,cd <..> 	,cd <.> 	,cd <fullpath> -- To Change Directory(cd)
+
+	EX:
+	 cd . -- retains prompt in the current directory
+	 cd .. -- Goes in to the Parent Directory
+	 cd venki -- goes on directory named "venki" if it exists in the current directory
+		else displays error message
+	 cd / -- goes to the root directory
+	 cd IBFS/venki/naidu -- goes to specified directory if complete path is specified exists
+	
+View Directory:
+	 vd -- To View Contents of Directory(dir)
+
+	EX:
+	 vd -- lists the contents of current working directory
+	
+Create File:
+	 mf <file name> -- To Create a File(cat and copy con)
+
+	EX:
+	 mf venki.txt -- creates a file with the specified name, Gives error message if it exists
+	
+Remove File:
+	 rf <file name> -- To Remove a File(rm and del)
+
+	EX:
+	 rf venki.txt -- removes file specified if it exists in current directory else error message
+	
+Copy File:
+	 cf <sourcefile> <destinationfile> -- To Copy Contents fo source to destination(cp and copy)
+
+	EX:
+	 cp venki.txt dest.txt -- copies the file venki.txt to dest.txt if venki.txt exists else error message
+			displays if dest.txt already exists
+	
+Move File:
+	 mv <sourcefile> <destinationfile> -- To Rename a File(mv and ren)
+
+	EX:
+	 mv venki.txt dest.txt -- renames the file venki.txt to dest.txt if venki.txt exists else error message
+			displays if dest.txt already exists
+	
+Word Count:	
+	 wc <file name> -- To Calculate the Lines ans Words in a File(wc)
+
+	EX:
+	 wc venki.txt -- gives the number of lines and words in the file if it exists else error message
+	
+Disk Usage:
+	 du -- To Display Disk Usage(INNOVATION,du)
+
+	EX:
+	 du -- displays the usage blocks by files with 134537766sage and internal fragmentation
+	
+Disk Free:
+	 df -- To Display Disk Free(INNOVATION,df)
+
+	EX:
+	 df -- displays the available blocks for data relevant information
+	
+Format:
+	 ft -- To Format the Disk(format)
+
+	EX:
+	 ft -- queries for formatting the disk y to format and anything else to skip
+
+Root Structure:	
+	 rs -- To View the Root Structure or File Descriptor Block(INNOVATION,tree)
+
+	EX:
+	 rs -- (root structure) displays the contents of the file system with relevant details
+	
+Inode Structure:
+	 is -- To View the Inode Structure(INNOVATION)
+
+	EX:
+	 is -- (inode structure) displays the contents of the inode part of the file system
+	
+Clear Screen Buffer:
+	 cl -- To Clear the Screen Buffer(clear,cls)
+
+	EX:
+	 cl -- clears the screen buffer
+	
+Date:
+	 dt -- To Display Date(date,time)
+
+	EX:
+	 dt -- displays the current date and time
+
+Present Working Directory:	
+	 pd -- To Display the Current Working Directory(pwd)
+
+	EX:
+	 pd -- displays the current working directory
+	
+About:
+	 at -- To Display About the Version Related Details(ver)
+
+	EX:
+	 at -- gives the information about the authors
+
+Quit:	
+	 qt -- To Quit or Logout(logout,exit,quit)
+
+	EX:
+	 qt -- quits from the shell
+
+Help:
+	 h  -- To Display Help on Commands(?,--h,man)
+
+	EX:
+	 h -- diplays the available commands in the shell
+
+Syntax:	
+	 s <command> -- To Display Help on Individaul Commands(--h,?)
+
+	EX:
+	 s md -- gives the mini man page related to command "md"
+
+___________________________________________________________________________________________________________________
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

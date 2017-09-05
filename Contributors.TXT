@@ -1,0 +1,24 @@
+venkatnaidu@users.sourceforge.net 
+
+
+   	  PROJECTS DONE AT International Institute of Information Technology Bangalore
+
+			
+
+1 ########OS PROJECT:    Got 1st Place (1/5)                          
+
+	       Title: Inode Based File Systems			 Status: COMPLETED
+
+	       Platform: Linux (SUSE)				 Programming Language: C
+
+	Roll Number		Name				 Email-ID:
+	2005145          Venkata Thippanna Rao P  R              venkata.thippannarao@iiitb.ac.in 
+
+	2005147          Vidyadhar Nemalapuri                    vidyadhar.nemalapuri@iiitb.ac.in 
+
+	2005146          Venu madhav.A                           venu.madhav@iiitb.ac.in
+
+
+
+
+ 
